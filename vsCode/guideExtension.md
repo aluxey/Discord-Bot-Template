@@ -3,23 +3,11 @@
 ## 🚀 Extensions Essentielles pour le Web
 
 ### **Prettier - Code formatter** (`esbenp.prettier-vscode`)
-**Pourquoi indispensable :**
-- ✅ Formatage automatique et cohérent du code
-- ✅ Support de 20+ langages (JS, TS, CSS, HTML, JSON, etc.)
-- ✅ Configuration partageable en équipe
-- ✅ Intégration parfaite avec les actions de sauvegarde
-
 **Ce qu'elle apporte :** Fin des débats sur le style de code, formatage instantané à la sauvegarde
 
 ---
 
 ### **ESLint** (`ms-vscode.vscode-eslint`)
-**Atouts majeurs :**
-- 🔍 Détection d'erreurs en temps réel
-- 🛠️ Correction automatique des problèmes
-- 📏 Respect des bonnes pratiques JavaScript/TypeScript
-- 🎯 Règles personnalisables par projet
-
 **Impact :** Améliore la qualité du code et évite les bugs avant même l'exécution
 
 ---
@@ -35,58 +23,14 @@
 ---
 
 ### **Tailwind CSS IntelliSense** (`bradlc.vscode-tailwindcss`)
-**Superpowers pour Tailwind :**
-- 🎨 Autocomplétion intelligente des classes
-- 🔍 Prévisualisation des couleurs et espacements
-- ⚠️ Détection des classes inexistantes
-- 📱 Support des variants responsives
-
 **Résultat :** Développement Tailwind 10x plus rapide et sans erreur
 
 ## 🐘 Extensions PHP & Backend
 
 ### **PHP Intelephense** (`bmewburn.vscode-intelephense-client`)
-**Le must-have PHP :**
-- 🧠 IntelliSense avancé pour PHP 7.0+
-- 🔍 Go to definition, find references
-- 🛠️ Refactoring intelligent
-- 📚 Documentation intégrée des fonctions PHP
-- 🚀 Performance optimisée pour gros projets
-
 **Avantage :** Remplace l'extension PHP officielle avec bien plus de fonctionnalités
 
 ---
-
-### **Laravel Blade Snippets** (`onecentlin.laravel-blade`)
-**Spécialement pour Laravel :**
-- ⚡ Snippets pour toutes les directives Blade
-- 🎨 Coloration syntaxique perfectionnée
-- 📝 Autocomplétion des helpers Laravel
-- 🔧 Support des components Blade
-
-**Exemple :** Taper `@foreach` génère automatiquement la structure complète
-
----
-
-### **Laravel Blade formatter** (`shufo.vscode-blade-formatter`)
-**Formatage professionnel Blade :**
-- 🎯 Formatage intelligent des templates Blade
-- 🔄 Indentation correcte du HTML et PHP mélangés
-- ⚙️ Configuration personnalisable
-- 💾 Intégration avec format on save
-
-**Résultat :** Templates Blade toujours propres et cohérents
-
----
-
-### **Laravel Artisan** (`ryannaddy.laravel-artisan`)
-**Interface graphique pour Artisan :**
-- 📋 Exécution des commandes Artisan depuis VS Code
-- 🎮 Interface intuitive pour les commandes courantes
-- ⚡ Création rapide de controllers, models, migrations
-- 📊 Vue d'ensemble des routes et commandes
-
-**Gain :** Plus besoin de jongler entre IDE et terminal
 
 ## ⚛️ Frontend Moderne
 
@@ -114,12 +58,6 @@
 ---
 
 ### **Path Intellisense** (`christian-kohler.path-intellisense`)
-**Navigation fichiers simplifiée :**
-- 📂 Autocomplétion des chemins de fichiers
-- 🔍 Support des chemins relatifs et absolus
-- 🖼️ Aperçu des images dans les suggestions
-- ⚙️ Configuration des mappings de chemins
-
 **Confort :** Imports et liens sans erreur de frappe
 
 ## 🎨 Thèmes et Apparence
@@ -131,17 +69,9 @@
 - 📱 Cohérence avec les outils modernes
 - ⚙️ Variants disponibles (Darker, Vivid)
 
-**Popularité :** Plus de 5M de téléchargements, adopté par GitHub
-
 ---
 
 ### **Material Icon Theme** (`pkief.material-icon-theme`)
-**Icônes intuitives :**
-- 📁 Icônes spécifiques par type de fichier
-- 🎯 Reconnaissance visuelle instantanée
-- 🎨 Design Material cohérent
-- 🔧 Personnalisation des couleurs de dossiers
-
 **Navigation :** Trouvez vos fichiers d'un coup d'œil
 
 ---
@@ -158,36 +88,14 @@
 ## 🚀 Productivité & Collaboration
 
 ### **GitLens** (`eamodio.gitlens`)
-**Git superpowers :**
-- 👤 Annotations de blame inline
-- 📊 Historique des commits par ligne
-- 🔍 Comparaisons de branches avancées
-- 📈 Insights sur l'activité du repository
-- 🤝 Collaboration améliorée
-
 **Visibilité :** Comprendre l'historique du code sans quitter l'éditeur
 
 ---
 
 ### **Live Server** (`ritwickdey.liveserver`)
-**Serveur de développement local :**
-- 🔄 Rechargement automatique du navigateur
-- 📱 Test sur appareils mobiles (même réseau)
-- ⚡ Serveur HTTP lightweight
-- 🎯 Un clic pour lancer
-
 **Workflow :** Développement frontend instantané et fluide
 
 ---
-
-### **REST Client** (`humao.rest-client`)
-**Tests API intégrés :**
-- 📡 Envoie de requêtes HTTP depuis VS Code
-- 📋 Collections de requêtes organisées
-- 🔧 Variables d'environnement
-- 📊 Historique des réponses
-
-**Alternative :** Remplace Postman pour les tests simples
 
 ## 🔧 Outils de Développement
 
@@ -203,23 +111,11 @@
 ---
 
 ### **Error Lens** (`usernamehw.errorlens`)
-**Erreurs visibles instantanément :**
-- ⚠️ Affiche les erreurs directement dans le code
-- 🔴 Highlight des lignes problématiques
-- 💡 Suggestions inline
-- 📊 Statistiques d'erreurs par fichier
-
 **Debugging :** Résolution plus rapide des problèmes
 
 ---
 
 ### **Auto Close Tag** (`formulahendry.auto-close-tag`)
-**Fermeture automatique :**
-- 🏷️ Ferme automatiquement les balises HTML/XML
-- ⚡ Support JSX, Vue, PHP
-- ⚙️ Configuration personnalisable
-- 🛡️ Prévention d'erreurs de syntaxe
-
 **Confort :** Écriture HTML/JSX sans frustration
 
 ## 📦 Extensions par Stack
