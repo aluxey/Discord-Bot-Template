@@ -20,9 +20,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Load zoxide (fast directory jumping)
-eval "$(zoxide init zsh)"
-
 # User configuration
 export EDITOR='nano'
 
