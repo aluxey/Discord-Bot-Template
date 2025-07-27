@@ -3,3 +3,6 @@
 
 ## Setup VsCode
 ![vsCodeImage](/Assets/vscode.png)
+
+## Neofetch profile
+![neofetchImage](/Assets/neofetch.png)
