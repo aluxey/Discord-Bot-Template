@@ -1,0 +1,65 @@
+/* Fichier: ~/.mozilla/firefox/{profil}/chrome/userChrome.css */
+
+/* ENABLE THIS IN about:config */
+/* toolkit.legacyUserProfileCustomizations.stylesheets = true */
+
+/* Variables pour cohérence */
+:root {
+  --toolbar-bgcolor: #1e1e1e !important;
+  --toolbar-color: #ffffff !important;
+  --tab-min-width: 120px !important;
+  --tab-height: 36px !important;
+}
+
+/* MINIMAL TOOLBAR */
+#nav-bar {
+  background: var(--toolbar-bgcolor) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* COMPACT TABS */
+.tabbrowser-tab {
+  min-width: var(--tab-min-width) !important;
+  height: var(--tab-height) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+  background: #0078d4 !important;
+}
+
+/* HIDE UNNECESSARY BUTTONS */
+#pageActionButton,
+#star-button-box,
+#pocket-button {
+  display: none !important;
+}
+
+/* URL BAR STYLING */
+#urlbar {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+}
+
+#urlbar:focus-within {
+  border-color: #0078d4 !important;
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3) !important;
+}
+
+/* BOOKMARKS TOOLBAR */
+#PersonalToolbar {
+  background: var(--toolbar-bgcolor) !important;
+  border: none !important;
+}
+
+.bookmark-item {
+  color: #cccccc !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+}
+
+.bookmark-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
