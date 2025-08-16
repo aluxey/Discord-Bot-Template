@@ -1,6 +1,6 @@
-/* 
+/*
  * userChrome.css - Configuration Firefox Aurélien Luxey
- * Version complète optimisée pour développeur
+ * Version optimisée développeur
  * À placer dans: ~/.mozilla/firefox/{profil}/chrome/userChrome.css
  * Nécessite: toolkit.legacyUserProfileCustomizations.stylesheets = true
  */
@@ -16,7 +16,7 @@
   --tab-inactive-bg: #2d2d2d !important;
   --tab-hover-bg: #3a3a3a !important;
   --tab-color: #ffffff !important;
-  --tab-close-hover: #ff4444 !important;
+  --tab-close-hover: rgba(255, 68, 68, 0.7) !important;
 
   --tab-min-width: 120px !important;
   --tab-max-width: 280px !important;
@@ -42,38 +42,16 @@
   /* Animations */
   --transition-fast: 0.1s ease-in-out !important;
   --transition-normal: 0.2s ease-in-out !important;
-  --transition-slow: 0.3s ease-in-out !important;
-}
-
-/* === CONFIGURATION GLOBALE === */
-* {
-  box-sizing: border-box !important;
-}
-
-#main-window {
-  background: var(--toolbar-bgcolor) !important;
-}
-
-/* === SUPPRESSION DE LA BARRE DE TITRE === */
-.titlebar-buttonbox-container {
-  display: none !important;
-}
-
-#navigator-toolbox {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 /* === BARRE D'OUTILS PRINCIPALE === */
 #nav-bar {
   background-color: var(--toolbar-bgcolor) !important;
   border: none !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) !important;
   height: 36px !important;
   padding: 2px 8px !important;
 }
 
-/* Espacement des éléments */
 #nav-bar .toolbarbutton-1 {
   margin: 0 2px !important;
   padding: 4px 6px !important;
@@ -85,28 +63,9 @@
   background: var(--toolbar-hover) !important;
 }
 
-#nav-bar .toolbarbutton-1:active {
-  background: var(--toolbar-active) !important;
-}
-
-/* === ONGLETS AMÉLIORÉS === */
-#TabsToolbar {
-  background: var(--toolbar-bgcolor) !important;
-  max-height: calc(var(--tab-height) + 2px) !important;
-  border: none !important;
-}
-
-.tabbrowser-tab {
-  min-width: var(--tab-min-width) !important;
-  max-width: var(--tab-max-width) !important;
-  height: var(--tab-height) !important;
-  color: var(--tab-color) !important;
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  padding: 0 !important;
-  margin: 0 1px !important;
-  border-radius: 6px 6px 0 0 !important;
-  transition: all var(--transition-fast) !important;
+/* === ONGLET CONTENEUR VISUEL === */
+.tabbrowser-tab[usercontextid] .tab-background {
+  border-top: 3px solid var(--identity-tab-color, var(--accent-color)) !important;
 }
 
 /* Onglet actif */
@@ -116,55 +75,23 @@
   box-shadow: 0 -2px 0 var(--accent-color) !important;
 }
 
-.tabbrowser-tab[selected="true"] .tab-label {
-  font-weight: 500 !important;
-}
-
 /* Onglets inactifs */
 .tabbrowser-tab:not([selected]) .tab-background {
   background: var(--tab-inactive-bg) !important;
   border: none !important;
 }
 
-/* Hover sur onglets */
-.tabbrowser-tab:hover .tab-background {
-  background: var(--tab-hover-bg) !important;
-}
-
 /* Bouton fermer onglet */
 .tabbrowser-tab .tab-close-button {
   border-radius: 50% !important;
-  padding: 2px !important;
-  margin: 0 4px 0 0 !important;
-  opacity: 0.7 !important;
-  transition: all var(--transition-fast) !important;
+  opacity: 0.6 !important;
 }
-
 .tabbrowser-tab .tab-close-button:hover {
   background: var(--tab-close-hover) !important;
   opacity: 1 !important;
 }
 
-/* Onglet en cours de chargement */
-.tabbrowser-tab[busy] .tab-throbber {
-  opacity: 1 !important;
-}
-
-/* Onglet avec son */
-.tabbrowser-tab[soundplaying] .tab-icon-sound {
-  color: var(--success-color) !important;
-}
-
-.tabbrowser-tab[muted] .tab-icon-sound {
-  color: var(--error-color) !important;
-}
-
-/* === BARRE D'ADRESSE AVANCÉE === */
-#urlbar-container {
-  flex-grow: 1 !important;
-  margin: 0 8px !important;
-}
-
+/* === BARRE D'ADRESSE === */
 #urlbar {
   background: var(--urlbar-bg) !important;
   border: 1px solid var(--urlbar-border) !important;
@@ -176,256 +103,34 @@
   transition: all var(--transition-normal) !important;
 }
 
-#urlbar:focus-within {
-  border-color: var(--urlbar-focus) !important;
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--urlbar-focus) 30%, transparent) !important;
-  background: color-mix(in srgb, var(--urlbar-bg) 95%, var(--urlbar-focus) 5%) !important;
-}
-
-#urlbar:hover:not(:focus-within) {
-  border-color: color-mix(in srgb, var(--urlbar-border) 70%, var(--urlbar-focus) 30%) !important;
-}
-
-/* Suppression du halo par défaut */
-#urlbar[focused="true"] > #urlbar-background {
-  box-shadow: none !important;
-}
-
 /* Icônes dans la barre d'adresse */
 #urlbar .urlbar-icon {
   fill: var(--urlbar-text) !important;
-  opacity: 0.8 !important;
+  opacity: 0.9 !important;
 }
 
-/* === BOUTONS DE NAVIGATION === */
-#back-button, #forward-button, #reload-button, #home-button {
-  border-radius: 6px !important;
-  padding: 6px !important;
-  margin: 0 1px !important;
-}
-
-#back-button:hover, #forward-button:hover, #reload-button:hover, #home-button:hover {
-  background: var(--toolbar-hover) !important;
-}
-
-/* === SUPPRESSION D'ÉLÉMENTS INDÉSIRABLES === */
-#pageActionButton,
-#star-button-box,
-#pocket-button,
-#tracking-protection-icon-container,
+/* === NE PAS CACHER L’IDENTITÉ DU SITE === */
 #identity-box,
-#notification-popup-box {
-  display: none !important;
+#tracking-protection-icon-container {
+  display: inline-flex !important;
+  opacity: 0.85 !important;
 }
 
-/* === BARRE DE MARQUE-PAGES STYLÉE === */
-#PersonalToolbar {
-  background: var(--toolbar-bgcolor) !important;
-  border: none !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-  height: 32px !important;
-  padding: 2px 8px !important;
-}
-
-.bookmark-item {
-  color: #e0e0e0 !important;
-  background: transparent !important;
-  border: 1px solid transparent !important;
-  border-radius: 6px !important;
-  padding: 4px 10px !important;
-  margin: 0 2px !important;
-  font-size: 12px !important;
-  font-weight: 400 !important;
-  transition: all var(--transition-fast) !important;
-}
-
-.bookmark-item:hover {
-  background: var(--toolbar-hover) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-}
-
-.bookmark-item[open="true"] {
-  background: var(--accent-color) !important;
-  color: #ffffff !important;
-}
-
-/* === MENUS CONTEXTUELS === */
-menupopup {
-  background: var(--menu-bg) !important;
-  border: 1px solid var(--menu-border) !important;
-  border-radius: 8px !important;
-  padding: 4px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
-
-menuitem {
-  color: var(--toolbar-color) !important;
-  border-radius: 4px !important;
-  padding: 8px 12px !important;
-  margin: 1px !important;
-  transition: background-color var(--transition-fast) !important;
-}
-
-menuitem:hover {
-  background: var(--menu-hover) !important;
-}
-
-menuitem[disabled="true"] {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-menuseparator {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  margin: 4px 8px !important;
-}
-
-/* === SIDEBAR (pour Tree Style Tab) === */
-#sidebar-box {
-  background: var(--sidebar-bg) !important;
-  border-right: 1px solid var(--sidebar-border) !important;
-}
-
-#sidebar-header {
-  background: var(--toolbar-bgcolor) !important;
-  border-bottom: 1px solid var(--sidebar-border) !important;
-  color: var(--toolbar-color) !important;
-}
-
-/* === PANNEAU DE DÉVELOPPEMENT === */
-#developer-toolbar {
-  background: var(--toolbar-bgcolor) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* === POPUPS ET NOTIFICATIONS === */
-.panel-arrowcontainer {
-  background: var(--menu-bg) !important;
-  border: 1px solid var(--menu-border) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-}
-
-.panel-arrowcontent {
-  background: transparent !important;
-  color: var(--toolbar-color) !important;
-}
-
-/* === SCROLLBARS PERSONNALISÉES === */
+/* === SCROLLBARS === */
 scrollbar {
   width: 8px !important;
-  background: transparent !important;
 }
-
 scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3) !important;
   border-radius: 4px !important;
-  border: none !important;
 }
 
-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5) !important;
-}
-
-scrollbar-track {
-  background: transparent !important;
-}
-
-/* === FINDBAR (Ctrl+F) === */
-.findbar-container {
-  background: var(--toolbar-bgcolor) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  color: var(--toolbar-color) !important;
-}
-
-.findbar-textbox {
-  background: var(--urlbar-bg) !important;
-  border: 1px solid var(--urlbar-border) !important;
-  border-radius: 4px !important;
-  color: var(--urlbar-text) !important;
-}
-
-.findbar-textbox:focus {
-  border-color: var(--urlbar-focus) !important;
-  box-shadow: 0 0 0 1px var(--urlbar-focus) !important;
-}
-
-/* === RESPONSIVE - PETITS ÉCRANS === */
+/* === RESPONSIVE === */
 @media (max-width: 1200px) {
   :root {
     --tab-min-width: 100px !important;
-    --tab-max-width: 200px !important;
-  }
-  
-  .bookmark-item {
-    padding: 3px 6px !important;
-    font-size: 11px !important;
   }
 }
-
 @media (max-width: 800px) {
-  :root {
-    --tab-min-width: 80px !important;
-  }
-  
-  #PersonalToolbar {
-    display: none !important;
-  }
-}
-
-/* === ANIMATIONS SUBTILES === */
-@keyframes tab-loading {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
-}
-
-.tabbrowser-tab[busy] .tab-background {
-  animation: tab-loading 1s ease-in-out infinite !important;
-}
-
-/* === COMPATIBILITÉ EXTENSIONS === */
-/* Tree Style Tab */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
-  background: var(--sidebar-bg) !important;
-}
-
-/* Bitwarden */
-#_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action {
-  color: var(--toolbar-color) !important;
-}
-
-/* uBlock Origin */
-#ublock0_raymondhill_net-browser-action {
-  color: var(--toolbar-color) !important;
-}
-
-/* === FIXES SPÉCIFIQUES === */
-/* Correction des onglets épinglés */
-.tabbrowser-tab[pinned] {
-  width: 40px !important;
-  min-width: 40px !important;
-}
-
-.tabbrowser-tab[pinned] .tab-label {
-  display: none !important;
-}
-
-/* Correction du nouveau bouton onglet */
-#tabs-newtab-button {
-  background: transparent !important;
-  border-radius: 6px !important;
-  margin: 0 2px !important;
-  padding: 4px !important;
-}
-
-#tabs-newtab-button:hover {
-  background: var(--toolbar-hover) !important;
-}
-
-/* === PRINT PREVIEW === */
-@media print {
-  #navigator-toolbox, #PersonalToolbar {
-    display: none !important;
-  }
+  #PersonalToolbar { display: none !important; }
 }
