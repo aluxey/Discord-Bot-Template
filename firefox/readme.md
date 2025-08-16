@@ -1,5 +1,6 @@
 # Struct de la conf Mozilla Firefox
 
+```md
 firefox/
 ├── profiles.ini
 ├── profile-template/
@@ -8,7 +9,7 @@ firefox/
 │   │   └── userChrome.css       # UI customization
 │   ├── extensions/              # Extension XPI files
 │   └── containers.json          # Container configuration
-
+```
 ## Prérequis
 - Firefox ≥ 124
 - Linux (Wayland conseillé) : `MOZ_ENABLE_WAYLAND=1`
